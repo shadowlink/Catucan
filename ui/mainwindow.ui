@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>744</width>
-    <height>521</height>
+    <width>747</width>
+    <height>624</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -31,7 +31,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabMain">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <property name="iconSize">
        <size>
@@ -113,23 +113,55 @@
        </attribute>
        <layout class="QGridLayout" name="gridLayout_3">
         <item row="0" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout">
+         <layout class="QVBoxLayout" name="verticalLayout">
           <item>
-           <widget class="QLineEdit" name="edText"/>
+           <widget class="QTextEdit" name="textAdd"/>
           </item>
           <item>
-           <widget class="QPushButton" name="btAdd">
+           <widget class="QCommandLinkButton" name="btAdd">
             <property name="text">
-             <string>Comprobar</string>
+             <string>Detectar enlaces</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../resource.qrc">
+              <normaloff>:/resource/lupa.png</normaloff>:/resource/lupa.png</iconset>
             </property>
            </widget>
           </item>
-         </layout>
-        </item>
-        <item row="1" column="0">
-         <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
-           <widget class="QListWidget" name="lbMyList"/>
+           <widget class="QTreeWidget" name="tComprobados">
+            <property name="columnCount">
+             <number>5</number>
+            </property>
+            <attribute name="headerDefaultSectionSize">
+             <number>121</number>
+            </attribute>
+            <column>
+             <property name="text">
+              <string>Enlace</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Nombre del fichero</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Tamaño</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Disponibilidad</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Servidor</string>
+             </property>
+            </column>
+           </widget>
           </item>
           <item>
            <widget class="QPushButton" name="btAgregar">
@@ -178,7 +210,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>744</width>
+     <width>747</width>
      <height>23</height>
     </rect>
    </property>

@@ -1,5 +1,7 @@
 #include "mainwindowimpl.h"
 
+int countItems=0;
+
 //
 MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f) 
 	: QMainWindow(parent, f)
@@ -15,30 +17,38 @@ MainWindowImpl::MainWindowImpl( QWidget * parent, Qt::WFlags f)
 
 void MainWindowImpl::addClicked()
 {
-        QString nombre="";
-        if(edText->text() == "") // Si no hay nada no añade nada
-		return;
-        d->NuevoLink(edText->text()); //Crea un nuevo nodo de descarga
-        lbMyList->addItem(d->getUltimo()->getNombre()); // Añade el nombre real del archivo a la lista
-        edText->setText(""); // Borra el texto de la linea de insercion
-        edText->setFocus(); // Pone el foco en la linea de insercion
+        QString link="";
+        QTextCursor tc = textAdd->textCursor();
+        tc.movePosition( QTextCursor::Start );
+
+        while(!tc.atEnd())
+        {
+            QTreeWidgetItem *item = new QTreeWidgetItem(tComprobados);
+            tc.select( QTextCursor::LineUnderCursor );
+            link=tc.selectedText();
+            d->NuevoLink(link);
+            item->setText(0, d->getUltimo()->getNombre());
+            tc.removeSelectedText();
+            tc.movePosition( QTextCursor::Down );
+            textAdd->setTextCursor(tc);
+            countItems++;
+        }
+        tc.movePosition( QTextCursor::Start );
+        textAdd->setTextCursor(tc);
 }
 
 void MainWindowImpl::insertClicked()
 {
-    int tam = lbMyList->count(), i=0;
-
-    for(i=0; i<tam; i++)
+    int i=0;
+    QTreeWidgetItem *item2 = new QTreeWidgetItem(tComprobados);
+    for(i=0; i<countItems; i++)
     {
         QTreeWidgetItem *item = new QTreeWidgetItem(tMainList);
-        item->setText(0, lbMyList->item(i)->text());
-        item->setText(1, "hola");
-        item->setText(2, "hola");
-        item->setText(3, "hola");
-        item->setText(4, "hola");
-        item->setText(5, "hola");
+        item2=tComprobados->itemAt(0, i*17);
+        item->setText(0, item2->text(0));
+        tComprobados->removeItemWidget(item2, 0);
     }
-    lbMyList->clear();
+    countItems=0;
 }
 
 void MainWindowImpl::startClicked()

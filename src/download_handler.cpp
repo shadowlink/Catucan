@@ -88,8 +88,7 @@ void Download_Handler::SMegaupload(Link *link)
             valido3=m->DescargaUrl();
             if(valido3)
             {
-                cout<<link->getPos()<<endl;
-                    item=tMainList->itemAt(0, link->getPos());
+                    item=tMainList->itemAt(0, link->getPos()*17);
                     item->setText(1, "Analizando captcha");
                     valido=m->AnalizaCaptcha();
                     if(valido)

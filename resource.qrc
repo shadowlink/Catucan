@@ -6,5 +6,6 @@
         <file>resource/opciones.png</file>
         <file>resource/downloaded.png</file>
         <file>resource/help.png</file>
+        <file>resource/lupa.png</file>
     </qresource>
 </RCC>
