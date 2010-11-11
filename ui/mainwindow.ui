@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>744</width>
+    <height>521</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Catucan</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../resource.qrc">
+    <normaloff>:/resource/favicon.png</normaloff>:/resource/favicon.png</iconset>
+  </property>
+  <property name="toolTip">
+   <string/>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>32</width>
+    <height>32</height>
+   </size>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabMain">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+      <widget class="QWidget" name="tab">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <attribute name="icon">
+        <iconset resource="../resource.qrc">
+         <normaloff>:/resource/Earth-Download-256x256.png</normaloff>:/resource/Earth-Download-256x256.png</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Descargas</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="1" column="0">
+         <widget class="QPushButton" name="btStart">
+          <property name="text">
+           <string>Descargar todo</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QTreeWidget" name="tMainList">
+          <property name="columnCount">
+           <number>6</number>
+          </property>
+          <attribute name="headerDefaultSectionSize">
+           <number>120</number>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>Nombre del fichero</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Estado</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Tamaño</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Progreso</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Velocidad</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Estimado</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="icon">
+        <iconset resource="../resource.qrc">
+         <normaloff>:/resource/add.png</normaloff>:/resource/add.png</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Añadir enlaces</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLineEdit" name="edText"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btAdd">
+            <property name="text">
+             <string>Comprobar</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0">
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QListWidget" name="lbMyList"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btAgregar">
+            <property name="text">
+             <string>Añadir</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="icon">
+        <iconset resource="../resource.qrc">
+         <normaloff>:/resource/downloaded.png</normaloff>:/resource/downloaded.png</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Descargados</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <attribute name="icon">
+        <iconset resource="../resource.qrc">
+         <normaloff>:/resource/opciones.png</normaloff>:/resource/opciones.png</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Opciones</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_5">
+       <attribute name="icon">
+        <iconset resource="../resource.qrc">
+         <normaloff>:/resource/help.png</normaloff>:/resource/help.png</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Ayuda</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>744</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

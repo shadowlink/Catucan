@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resource/Earth-Download-256x256.png</file>
+        <file>resource/favicon.png</file>
+        <file>resource/add.png</file>
+        <file>resource/opciones.png</file>
+        <file>resource/downloaded.png</file>
+        <file>resource/help.png</file>
+    </qresource>
+</RCC>

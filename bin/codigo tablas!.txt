@@ -1,0 +1,99 @@
+
+Vale, este es el codigo de una tabla super cutre que acabo de hacer, lo pongo asi porque el foro lo pasa a modo tabla y no se ve codigo ninguno xDDD
+
+
+----------------------------------------------
+
+
+
+<table cellspacing="4" style="background-color:#ffffff" align="center">
+<tr>
+<td><img src="http://img339.imageshack.us/img339/9262/marcapagsjustin1copiagv6.jpg" border="0" alt="" /></td>
+<td><img src="http://img255.imageshack.us/img255/5128/marcapagsmaroon5copiaeh2.jpg" border="0" alt="" /></td>
+<td><img src="http://img339.imageshack.us/img339/4317/marcapagsshakira1copiarh4.jpg" border="0" alt="" /></td>
+</tr>
+<tr>
+<td style="color:#ffffff;text-align:center"><small>1</small></td>
+<td style="color:#ffffff;text-align:center"><small>2</small></td>
+<td style="color:#ffffff;text-align:center"><small>3</small></td>
+</tr>
+</table>
+
+
+---------------------------------------------
+
+
+
+desmenucemos el codigo:
+
+ - <table cellspacing="4" style="background-color:#ffffff" align="center"> --> esto basicamente define el espacio entre graficos (4), el color de fondo (#ffffff, que viene siendo el blanco) y el alineado
+
+ - <img src="http://img339.imageshack.us/img339/9262/marcapagsjustin1copiagv6.jpg" border="0" alt="" /> --> nuestra imagen, la url de la que proviene, el borde (0 en este caso porque no tiene)y el alt, que es el tipico comentario de texto que sale en una pestañita chica cuando dejas el raton encima de la imagen... totalmente ahorrable
+
+ - <td style="color:#ffffff;text-align:center"><small>1</small></td> --> y esto que veis aqui, es el numero de la celda de la tabla, ese que sale debajito ^^
+
+ - <tr> </tr> --> estas pestañas nos indican que todo lo que hay dentro de ellas va en una misma fila de celdas
+
+ - <td> </td> --> y estas nos indican las diferentes celdas, de modo que, si mirais arriba, entre cada tr y /tr, hay tres celdas delimitadas por tres td y /td
+
+
+
+Bien, la idea para las tablas de banners y esas cosas, que van de uno en uno es la siguiente:
+
+
+
+<table cellspacing="4" style="background-color:#ffffff" align="center">
+
+</table>
+
+
+
+Primero e importante poner este codigo, porque si no poneis eso no sale tabla ninguna xDD os aconsejo que dejeis el alineado centrado que queda mas mono ^^ si vais a poner los graficos de uno en uno pues el cellspacing da igual que pongais o no, y despues elegiis el color de fondo ^^
+
+
+Luego, dentro de ellas, insertamos esto para cada uno de nuestros banners/loquesea si los vamos a poner de uno en uno:
+
+
+<tr>
+<td><img src="" border="" alt="" /></td>
+</tr>
+
+
+Y eso si los vais a poner de dos en dos (para hacerlos de tres en tre os vais al maldito generador xDDD)
+
+
+<tr>
+<td><img src="" border="" alt="" /></td>
+<td><img src="" border="" alt="" /></td>
+</tr>
+
+
+Lo rellenais tal que asi: los valores van entre las dos dobles comillas que quedan: en el src= poneis vuestra url, y los demas no hace falta que los relleneis si no quereis ^^
+
+
+Lo de los numeros yo basicamente me lo ahorraria, porque si poneis numeros cada vez que actualiceis teneis que cambiarlos todos xDDDD asi que nada de numeretes ^^
+
+
+
+
+total, que quede algo asi, con urls dentro y tal ^^
+
+
+<table cellspacing="4" style="background-color:#ffffff" align="center">
+<tr>
+<td><img src="" border="" alt="" /></td>
+</tr>
+<tr>
+<td><img src="" border="" alt="" /></td>
+</tr>
+<tr>
+<td><img src="" border="" alt="" /></td>
+</tr>
+<tr>
+<td><img src="" border="" alt="" /></td>
+</tr>
+</table>
+
+
+
+Anita!
