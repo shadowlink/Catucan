@@ -80,7 +80,7 @@ void Download_Handler::downMegaupload()
 void Download_Handler::SMegaupload(Link *link)
 {
     bool valido=true, valido2=true, valido3=true, valido4=true;
-    QTreeWidgetItem* item=new QTreeWidgetItem(tMainList);
+    QTreeWidgetItem* item=new QTreeWidgetItem();
     Megaupload *m=new Megaupload(link->getDir(), tMainList);
     do
     {
@@ -93,17 +93,24 @@ void Download_Handler::SMegaupload(Link *link)
                     valido=m->AnalizaCaptcha();
                     if(valido)
                     {
-                            valido2=m->CaptchaValido();
+                    	item->setText(1, "Captcha valido");
+                        valido2=m->CaptchaValido();
                     }
+                    else
+                    {
+                    	item->setText(1, "Error de captcha, reintentando");
+                   	}
             }
     }
     while(!valido2 || !valido || !valido3);
 
     do
     {
+    		item->setText(1, "Descargando...");
             valido4=m->DescargaFichero();
     }
     while(!valido4);
+    item->setText(1, "Finalizado");
 
     delete m;
     m=NULL;

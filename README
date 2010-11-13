@@ -1,3 +1,7 @@
+-------------R2--------------------
+-Corregidos algunos bugs menores en las listas
+-Comenzada la transicion a Catucan libre de libcurl
+
 -------------R1--------------------
 -Ahora los enlaces se pueden añadir en bloque
 -Mejorada la vista "Añadir enlaces"

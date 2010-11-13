@@ -82,25 +82,11 @@ bool Megaupload::DescargaUrl()
 	strcpy(cMegalink, megalink.c_str());
 	curl = curl_easy_init();
 	cout<<cMegalink<<endl;
-	html = fopen("html.txt","wb");
-	if(curl) 
-	{   
-		curl_easy_setopt(curl, CURLOPT_URL, cMegalink);
-		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
-		curl_easy_setopt(curl, CURLOPT_WRITEDATA, html);
-		res = curl_easy_perform(curl);
-		curl_easy_cleanup(curl);
-		if (res == CURLE_OK)
-		{
-			cout<<"Html descargado"<<endl;
-		}
-		else
-		{
-			cout<<"Html no descargado"<<endl;
-			correcto=false;
-		}
-	}
-	fclose(html);
+	
+	DownloadManager manager("html.txt");
+    QString d=megalink.c_str();
+    QUrl a=d;
+    correcto=manager.startNextDownload(a);
 	
 	if(correcto)
 	{
@@ -174,39 +160,15 @@ bool Megaupload::AnalizaCaptcha()
 	cout<<c<<endl;
 	cout<<"###########"<<endl;
 	
-	if ( (captcha_download = fopen ("gen.gif" , "wb" ) ) != NULL )
-	{
-		curl = curl_easy_init();
-		if(curl)
-		{
-			curl_easy_setopt(curl, CURLOPT_URL, c);
-			curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
-			curl_easy_setopt(curl, CURLOPT_WRITEDATA, captcha_download);
-			res = curl_easy_perform(curl);
-			curl_easy_cleanup(curl);
-		
-			if (res == CURLE_OK)
-			{
-				cout<<"Captcha descargado!"<<endl;
-			}
-			else
-			{
-				cout<<"Captcha no descargado"<<endl;
-				correcto=false;
-			}
-		}
-		fclose(captcha_download);
-	}
-
-	#ifdef WINDOWS
-		Sleep(5);
-	#else
-		sleep(5);
-	#endif
+	DownloadManager manager("gen.gif");
+    QString d=captchaDir.c_str();
+    QUrl a=d;
+    correcto=manager.startNextDownload(a);
 	
 	if(correcto)
 	{
-		system("convert -depth 8 -alpha off gen.gif gen.tif");
+        system("convert -depth 8 -alpha off gen.gif gen.tif");
+
 		system("tesseract gen.tif gen");
 		imagen.open("gen.txt", ios::in);
 		if(imagen.is_open())
@@ -288,16 +250,10 @@ bool Megaupload::DescargaFichero()
 
 	if(downloadlink!="")
 	{
-		char cDownloadlink[300]="";
-		char cNombre[400]="";
-		strcpy(cDownloadlink, "wget ");
-		strcat(cDownloadlink, downloadlink.c_str());
-		strcpy(cNombre, nombre.c_str());
-                DownloadManager manager;
-                QString d=downloadlink.c_str();
-                QUrl a=d;
-                manager.startNextDownload(a);
-                //system(cDownloadlink);
+        DownloadManager manager;
+        QString d=downloadlink.c_str();
+        QUrl a=d;
+        manager.startNextDownload(a);
 	}
 	else
 	{

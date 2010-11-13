@@ -11,6 +11,7 @@
 #include <QThread>
 #include "downloadmanager.h"
 #include <QTreeWidget>
+#include <QImageReader>
 //
 using namespace std;
 size_t write_data(void *ptr, size_t size, size_t nmemb, FILE *stream);
